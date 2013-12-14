@@ -32,6 +32,7 @@ def _scrape_from_string(s):
             result['user'] = None
             result['time'] = None
             result['points'] = None
+            result['comments'] = 0
             rv.append(result)
             continue
 
@@ -51,7 +52,7 @@ def _scrape_from_string(s):
 _urls = ('https://news.ycombinator.com/',
             'https://news.ycombinator.com/news2')
 
-def get_results():
+def get_stories():
     rv = []
     for url in _urls:
         r = requests.get(url)

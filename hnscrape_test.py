@@ -15,3 +15,4 @@ def test_basic_parse():
 def test_job_offer_parse():
     items = hnscrape._scrape_from_string(open('test_two.html').read())
     assert not items[17]['user']
+    assert set(items[17].keys()) == set(items[0].keys())
