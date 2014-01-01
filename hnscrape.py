@@ -40,7 +40,10 @@ def _scrape_from_string(s):
         if discussion.text_content() == 'discuss':
             result['comments'] = 0
         else:
-            result['comments'] = int(discussion.text_content().split()[0])
+            try:
+                result['comments'] = int(discussion.text_content().split()[0])
+            except:
+                result['comments'] = 0
         result['id'] = int(discussion.attrib['href'].split('=')[-1])
         result['user'] = second.cssselect('a')[0].text
         time = second.cssselect('a')[0].tail
