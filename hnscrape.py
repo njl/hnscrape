@@ -53,7 +53,7 @@ def _scrape_from_string(s):
     return rv
 
 _urls = ('https://news.ycombinator.com/',
-            'https://news.ycombinator.com/news2')
+        'https://news.ycombinator.com/news?p=2')
 
 def get_stories():
     rv = []
