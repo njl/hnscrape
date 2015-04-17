@@ -19,7 +19,7 @@ def _scrape_from_string(s):
     trs = trs[:-2]
     for first, second in _yield_tr_rows(trs):
         result = {}
-        result['rank'] = int(first.cssselect('td')[0].text_content()[:-1])
+        result['rank'] = int(first.cssselect('td')[0].text_content().strip()[:-1])
         title_link = first.cssselect('td')[2].cssselect('a')[0]
         result['title'] = title_link.text_content()
         result['url'] = title_link.attrib['href']
